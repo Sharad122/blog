@@ -146,7 +146,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "E:\\MY_PROJECT\\webhelp\\src\\generated\\prisma",
+      "value": "C:\\project\\webhelp\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -157,14 +157,18 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "E:\\MY_PROJECT\\webhelp\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\project\\webhelp\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -183,8 +187,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Contact {\n  id        Int      @id @default(autoincrement())\n  name      String\n  email     String\n  message   String\n  ip        String?\n  createdAt DateTime @default(now())\n}\n\nmodel Post {\n  id          Int      @id @default(autoincrement())\n  title       String\n  description String\n  picture     String\n  content     String\n  readTime    Int      @default(1)\n  published   Boolean  @default(false)\n  slug        String   @unique\n  tags        String\n  createdAt   DateTime @default(now())\n  updatedAt   DateTime\n}\n",
-  "inlineSchemaHash": "45b8924e7da09db36cb126c349273319d80d53c886a06d55406aeb4143caeb95",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n  output        = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Contact {\n  id        Int      @id @default(autoincrement())\n  name      String\n  email     String\n  message   String\n  ip        String?\n  createdAt DateTime @default(now())\n}\n\nmodel Post {\n  id          Int      @id @default(autoincrement())\n  title       String\n  description String\n  picture     String\n  content     String\n  readTime    Int      @default(1)\n  published   Boolean  @default(false)\n  slug        String   @unique\n  tags        String\n  createdAt   DateTime @default(now())\n  updatedAt   DateTime\n}\n",
+  "inlineSchemaHash": "447b840b7eac1ec4fed6a2fe3a8a4d6cdd9213fa1a34a39d714020ac80113479",
   "copyEngine": true
 }
 config.dirname = '/'
