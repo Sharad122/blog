@@ -10,7 +10,7 @@ const getPosts = async ( query : string | null | undefined, page : number ) => {
   else res = await fetch(`https://webhelp-one.vercel.app/api/post?page=${page}&query=${query}`, { cache : "no-store", headers });
   if (res.ok) return await res.json();
   else throw new Error("Couldn't load the blog posts !");
-};c
+};
 
 const page = async ({ searchParams }: { searchParams: Promise<{ q?: string; page?: string }> }) => {
   
