@@ -1,0 +1,1 @@
+export type Posts = { title:string, picture:string, readTime:number, createdAt:string, slug:string } ;
