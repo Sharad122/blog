@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    outputFileTracingExcludes: {
+      '*': ['.prisma/client'],
+    },
+  },
   webpack(config) {
     config.module.rules.push({
       test: /prisma\/.*\.node$/,
