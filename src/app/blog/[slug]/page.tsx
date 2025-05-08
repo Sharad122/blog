@@ -5,7 +5,8 @@ import { TimerIcon } from '@radix-ui/react-icons';
 import ShareButtons from '@/components/parts/share-buttons';
 
 const getPost = async ( slug : string ) => {
-  const res = await fetch(`https://webhelp-nine.vercel.app/api/post/${slug}`, { next : { revalidate : 3600 }});
+  const baseUrl = process.env.BASE_URL;
+  const res = await fetch(`${baseUrl}/api/post/${slug}`, { next : { revalidate : 3600 }});
   if (res.ok) return await res.json();
   else throw new Error("Couldn't load the blog post !");
 };

@@ -1,13 +1,14 @@
+import { Posts } from "@/lib/types";
 import BlogCard from "@/components/parts/blog-card";
 import PaginationStrap from "@/components/parts/pagination-strap";
-import { Posts } from "@/lib/types";
 
 let res;
 const headers = { 'X-API-Key' : process.env.API_KEY! };
+const baseUrl = process.env.BASE_URL;
 
 const getPosts = async ( query : string | null | undefined, page : number ) => {
-  if(!query) res = await fetch(`https://webhelp-nine.vercel.app/api/post?page=${page}`, { next : { revalidate : 1800 }, headers });
-  else res = await fetch(`https://webhelp-nine.vercel.app/api/post?page=${page}&query=${query}`, { cache : "no-store", headers });
+  if(!query) res = await fetch(`${baseUrl}/api/post?page=${page}`, { next : { revalidate : 1800 }, headers });
+  else res = await fetch(`${baseUrl}/api/post?page=${page}&query=${query}`, { cache : "no-store", headers });
   if (res.ok) return await res.json();
   else throw new Error("Couldn't load the blog posts !");
 };
